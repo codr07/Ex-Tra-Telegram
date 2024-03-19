@@ -25,6 +25,10 @@ from pathlib import Path
 import asyncio
 import telethon.utils
 import heroku3
+<<<<<< GitLab
+
+======
+>>>>>> master
 
 
 async def add_bot():
@@ -48,7 +52,11 @@ else:
         ).start(bot_token=Var.TG_BOT_TOKEN_BF_HER)
         print("Initialisation finished with no errors")
         print("Starting Userbot")
+<<<<<< GitLab
+        bot.loop.run_until_complete(add_bot(Var.TG_BOT_USER_NAME_BF_HER))
+======
         bot.loop.run_until_complete(add_bot())
+>>>>>> master
         if Var.HEROKU_APP_NAME and Var.HEROKU_API_KEY is not None:
             Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
             app = Heroku.app(Var.HEROKU_APP_NAME)
@@ -80,3 +88,9 @@ if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
     bot.run_until_disconnected()
+<<<<<< GitLab
+
+
+    
+======
+>>>>>> master
