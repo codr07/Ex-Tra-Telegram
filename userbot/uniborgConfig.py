@@ -1,3 +1,17 @@
+#   Copyright 2019 - 2020 DarkPrinc3
+
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+
+#       http://www.apache.org/licenses/LICENSE-2.0
+
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+
 import os
 from telethon.tl.types import ChatBannedRights
 ENV = bool(os.environ.get("ENV", False))
@@ -106,6 +120,9 @@ if ENV:
         MONGO_URI = os.environ.get("MONGO_URI", None)
         #Lydia API
         LYDIA_API = os.environ.get("LYDIA_API",None)
+        #Channelwide Broadcast
+        BROADCASTING_CHANNELS = os.environ.get("BROADCASTING_CHANNELS",None)
+
 else:
     class Config(object):
         DB_URI = None
